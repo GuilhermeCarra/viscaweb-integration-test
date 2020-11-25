@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap');
+@import './styles/variables';
+
+.App {
+  box-sizing: border-box;
+  font-family: "Source Sans Pro";
+  @media (min-width: $breakpoint-desktop) {
+    padding: 0 3%;
+  }
+}
