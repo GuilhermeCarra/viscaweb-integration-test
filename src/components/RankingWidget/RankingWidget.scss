@@ -1,0 +1,118 @@
+@import '../../styles/variables';
+
+.widget-header {
+    margin: 0 2%;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: $breakpoint-desktop) {
+        margin: 20px 2%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .title {
+        text-transform: uppercase;
+        font-weight: 700;
+        text-align: center;
+    }
+    .filter {
+        cursor: pointer;
+        font-size: 13px;
+        margin: 15px 0;
+        text-align: right;
+        color: #484848;
+        text-decoration: underline;
+        font-weight: 700;
+        @media (min-width: $breakpoint-desktop) {
+            order: -1;
+        }
+        &.view {
+            display: none;
+            @media (min-width: $breakpoint-desktop) {
+                display: block;
+                order: 3;
+            }
+        }
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 30px;
+        height: 17px;
+        margin-left: 5px;
+      }
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 13px;
+        width: 13px;
+        left: 2px;
+        bottom: 2px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      input:checked + .slider {
+        background-color: #2196F3;
+      }
+      input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+      }
+      input:checked + .slider:before {
+        -webkit-transform: translateX(13px);
+        -ms-transform: translateX(13px);
+        transform: translateX(13px);
+      }
+      .slider.round {
+        border-radius: 17px;
+      }
+      .slider.round:before {
+        border-radius: 50%;
+      }
+}
+
+@media (min-width: $breakpoint-desktop) {
+    .cardView {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+.widget-footer {
+    cursor: pointer;
+    margin: 20px 0;
+    color: #2738F1;
+    text-decoration: underline;
+    font-weight: 700;
+    text-align: center;
+    text-transform: capitalize;
+    @media (min-width: $breakpoint-desktop) {
+        text-decoration: none;
+    }
+}
+
+.widget-body {
+    transition: all 300ms ease-in-out;
+}
+
+.transition {
+    transform: translateX(-40px);
+    opacity: 0;
+}
